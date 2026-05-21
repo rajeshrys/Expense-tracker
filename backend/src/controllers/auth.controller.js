@@ -87,7 +87,7 @@ async function userlogincontroller(req,res){
 }
 
 async function userlogoutcontroller(req,res){
-    const token = req.cookies.token || req.headers.authorization?.split("")[1]
+    const token = req.cookies.token || req.headers.authorization?.split(" ")[1]
     if(!token){
         res.status(401).json({message:"Token is required"})
     }
